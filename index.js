@@ -38,6 +38,7 @@ document.body.appendChild(renderer.domElement); // body元素中插入canvas对�
 function render() {
   renderer.render(scene, camera); // 执行渲染操作 指定场景、相机作为参数
   mesh.rotateY(0.01); // 每次绕y轴旋转0.01弧度
+  requestAnimationFrame(render);
 }
-//间隔20ms周期性调用函数fun,20ms也就是刷新频率是50FPS(1s/20ms)，每秒渲染50次
-setInterval(render, 10);
+
+render();
